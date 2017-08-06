@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel common\models\BlogSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Blogs';
+$this->title = 'Блог';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="blog-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Blog', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать пост', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
