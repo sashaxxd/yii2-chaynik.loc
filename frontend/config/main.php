@@ -10,7 +10,15 @@ return [
     'id' => 'app-frontend',
     'language' => 'ru-Ru',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', 'gii', 'debug'],
+    'modules' => [
+        'gii' => [
+            'class' => 'yii\gii\Module'
+        ],
+        'debug' => [
+            'class' => 'yii\debug\Module'
+        ]
+    ],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [

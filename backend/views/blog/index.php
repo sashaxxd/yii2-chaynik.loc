@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="blog-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<!--    <h1>--><?//= Html::encode($this->title) ?><!--</h1>-->
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
@@ -28,7 +28,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
 //            'text:ntext',
             'url:url',
-            'status_id',
+            ['attribute' => 'status_id', 'filter' => ['off', 'on'], 'value' => function($model){
+                if($model->status_id == 1){
+                    $status = '<span class="text-success">Вкл</span>';
+                }
+                else{
+                    $status = '<span class="text-danger">Выкл</span>';
+                }
+                       return $status;
+
+            },
+                'format' => 'html',
+            ],
              'sort',
             ['class' => 'yii\grid\ActionColumn'],
         ],
