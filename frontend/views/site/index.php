@@ -20,7 +20,7 @@ $this->title = 'My Yii Application';
             <?php foreach($blogs as $blog):?>
             <div class="col-lg-4">
                 <?php ?>
-                <h2><?= $blog->title ?></h2>
+                <h2><?= $blog->title ?><span class="badge"><?= $blog->author->email ?></span></h2>
 
                 <p><?= $blog->text ?></p>
 

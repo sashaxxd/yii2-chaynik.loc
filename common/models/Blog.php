@@ -32,6 +32,7 @@ class Blog extends \yii\db\ActiveRecord
         return [
             [['title', 'url'], 'required'],
             [['text'], 'string'],
+            [['url'], 'unique'],
             [['status_id', 'sort'], 'integer'],
             [['sort'], 'integer', 'min' => 1, 'max' => 99 ],
             [['title', 'url'], 'string', 'max' => 150],
@@ -51,5 +52,9 @@ class Blog extends \yii\db\ActiveRecord
             'status_id' => 'Статус',
             'sort' => 'Сортировка',
         ];
+    }
+
+    public  function  getAuthor(){
+        return $this->hasOne(User::className(),['id' => 'user_id']);
     }
 }
