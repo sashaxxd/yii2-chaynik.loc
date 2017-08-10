@@ -51,6 +51,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'blog/sort' => 'blog/sort',
                 'blog' => 'blog/index',
                 'blog/<url>' => 'blog/one',
                 '' => 'site/index',
